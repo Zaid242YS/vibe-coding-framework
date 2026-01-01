@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Coding Framework</title>
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',sans-serif;background:linear-gradient(135deg,#667eea,#764ba2);min-height:100vh;padding:20px}.container{max-width:1200px;margin:0 auto;background:rgba(255,255,255,.95);border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.1);overflow:hidden}.header{background:linear-gradient(135deg,#ff6b6b,#4ecdc4);color:#fff;padding:40px;text-align:center}.header h1{font-size:2.5em;margin-bottom:10px;font-weight:700}.header p{font-size:1.2em;opacity:.9}.nav{background:#fff;padding:15px;text-align:center;border-bottom:2px solid #e1e8ed}.nav a{color:#667eea;text-decoration:none;margin:0 15px;font-weight:600}.nav a:hover{text-decoration:underline}.content{padding:40px}.progress-tracker{background:#f1f3f4;border-radius:15px;padding:30px;margin:30px 0}.progress-bar{height:10px;background:#e1e8ed;border-radius:5px;overflow:hidden;margin:20px 0}.progress-fill{height:100%;background:linear-gradient(90deg,#4ecdc4,#44a08d);width:0%;transition:width .3s ease}.phase-container{display:grid;gap:30px;margin-bottom:40px}.phase{background:#f8f9ff;border-radius:15px;padding:30px;border-left:6px solid;transition:all .3s ease;cursor:pointer}.phase:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(0,0,0,.1)}.phase.phase-1{border-color:#ff6b6b}.phase.phase-2{border-color:#4ecdc4}.phase.phase-3{border-color:#45b7d1}.phase.phase-4{border-color:#96ceb4}.phase.phase-5{border-color:#feca57}.phase h3{color:#2c3e50;font-size:1.5em;margin-bottom:15px;display:flex;align-items:center;gap:10px}.phase-icon{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.2em}.phase-1 .phase-icon{background:#ff6b6b;color:#fff}.phase-2 .phase-icon{background:#4ecdc4;color:#fff}.phase-3 .phase-icon{background:#45b7d1;color:#fff}.phase-4 .phase-icon{background:#96ceb4;color:#fff}.phase-5 .phase-icon{background:#feca57;color:#fff}.phase-content{display:none;margin-top:20px}.phase.active .phase-content{display:block;animation:fadeIn .3s ease}@keyframes fadeIn{from{opacity:0;transform:translateY(-10px)}to{opacity:1;transform:translateY(0)}}.checkbox-list{display:grid;gap:10px;margin:20px 0}.checkbox-item{display:flex;align-items:center;gap:10px;padding:10px;background:#fff;border-radius:8px;cursor:pointer;transition:background-color .3s ease}.checkbox-item:hover{background:#f8f9ff}.checkbox-item input[type=checkbox]{width:18px;height:18px;cursor:pointer}.emergency-kit{background:linear-gradient(135deg,#ff9a56,#feca57);color:#fff;border-radius:15px;padding:30px;margin:30px 0}.emergency-kit h3{font-size:1.3em;margin-bottom:15px}.emergency-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:15px;margin-top:20px}.emergency-item{background:rgba(255,255,255,.2);padding:15px;border-radius:10px;backdrop-filter:blur(10px)}.ship-it-button{background:linear-gradient(135deg,#ff6b6b,#ee5a6f);color:#fff;border:none;padding:20px 40px;border-radius:15px;font-size:1.2em;font-weight:600;cursor:pointer;transition:all .3s ease;margin:20px auto;display:block;box-shadow:0 10px 25px rgba(255,107,107,.3)}.ship-it-button:hover{transform:translateY(-3px);box-shadow:0 15px 35px rgba(255,107,107,.4)}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Vibe Coding Framework</h1>
+            <p>Ship Apps, Not Bugs - Your End-Goal Focused Methodology</p>
+        </div>
+        <div class="nav">
+            <a href="index.html">🏠 Home</a>
+            <a href="framework.html">📋 Framework</a>
+            <a href="tracker.html">📊 Tracker</a>
+        </div>
+        <div class="content">
+            <div class="progress-tracker">
+                <h3>🎯 Current Project Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div style="text-align:center;margin-top:10px">
+                    <span id="progressText">0% Complete - Let's Start!</span>
+                </div>
+            </div>
+            <div class="phase-container">
+                <div class="phase phase-1" onclick="togglePhase(this)">
+                    <h3><div class="phase-icon">🎯</div>Phase 1: Vision Lock (2 hours max)</h3>
+                    <div class="phase-content">
+                        <p><strong>Goal:</strong> Define EXACTLY what you're building and what "done" looks like.</p>
+                        <div class="checkbox-list">
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Write 3-sentence app description</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>List 5 core features (no more!)</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Define your "Version 1.0" - minimum viable version</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Set deadline: When will you ship this?</span></div>
+                        </div>
+                        <div style="background:#fff3cd;padding:15px;border-radius:8px;margin-top:15px">
+                            <strong>🛑 RULE:</strong> If you can't explain your app in 3 sentences, it's too complex. Simplify first.
+                        </div>
+                    </div>
+                </div>
+                <div class="phase phase-2" onclick="togglePhase(this)">
+                    <h3><div class="phase-icon">⚡</div>Phase 2: Foundation Sprint (1 day max)</h3>
+                    <div class="phase-content">
+                        <p><strong>Goal:</strong> Get something running FAST, even if it's ugly.</p>
+                        <div class="checkbox-list">
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Project created and running locally</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Basic navigation/structure in place</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Deployed to web or app store connect</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase phase-3" onclick="togglePhase(this)">
+                    <h3><div class="phase-icon">🔧</div>Phase 3: Feature Implementation (Danger Zone)</h3>
+                    <div class="phase-content">
+                        <p><strong>Goal:</strong> Add features WITHOUT getting stuck in error hell.</p>
+                        <div style="background:#f8d7da;padding:20px;border-radius:10px;margin:20px 0;border-left:4px solid #dc3545">
+                            <strong>⚠️ THIS IS WHERE YOU USUALLY GET STUCK</strong><br>Use the strategies below to stay on track.
+                        </div>
+                        <div class="checkbox-list">
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Feature 1 working and tested</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Feature 2 working and tested</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Feature 3 working and tested</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Core functionality complete</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase phase-4" onclick="togglePhase(this)">
+                    <h3><div class="phase-icon">✨</div>Phase 4: Polish & Ship Prep (1 day max)</h3>
+                    <div class="phase-content">
+                        <p><strong>Goal:</strong> Make it look good enough to ship.</p>
+                        <div class="checkbox-list">
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Fix obvious UI issues</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Add app icon/logo</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Write app description/landing page</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Test on 3 different devices/browsers</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Screenshots/demo ready</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="phase phase-5" onclick="togglePhase(this)">
+                    <h3><div class="phase-icon">🚀</div>Phase 5: Launch (Ship It!)</h3>
+                    <div class="phase-content">
+                        <p><strong>Goal:</strong> Get your app in front of people.</p>
+                        <div class="checkbox-list">
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Deployed to production</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Shared with 5 people for feedback</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Listed on app store/website</span></div>
+                            <div class="checkbox-item"><input type="checkbox" onchange="updateProgress()"><span>Celebrated your win! 🎉</span></div>
+                        </div>
+                        <button class="ship-it-button" onclick="celebrate()">🎉 I SHIPPED MY APP! 🎉</button>
+                    </div>
+                </div>
+            </div>
+            <div class="emergency-kit">
+                <h3>🆘 EMERGENCY KIT - When You're Stuck</h3>
+                <p>Use these when you hit a wall and feel like giving up:</p>
+                <div class="emergency-list">
+                    <div class="emergency-item"><strong>🔄 The Reset</strong><br>Close everything. Take 30-min walk. Come back fresh.</div>
+                    <div class="emergency-item"><strong>📋 The Simplify</strong><br>Remove the feature causing problems. Ship without it.</div>
+                    <div class="emergency-item"><strong>🤖 The AI Save</strong><br>Copy ENTIRE error + code to Claude/ChatGPT. Ask for exact fix.</div>
+                    <div class="emergency-item"><strong>👥 Phone-a-Friend</strong><br>Screen share with any dev friend. Fresh eyes find solutions.</div>
+                    <div class="emergency-item"><strong>🔄 Template Switch</strong><br>Find working example app. Copy their approach exactly.</div>
+                    <div class="emergency-item"><strong>🚢 Ship Anyway</strong><br>If 80% works, ship it. Fix rest in version 1.1.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        function togglePhase(e){const a=e.classList.contains('active');document.querySelectorAll('.phase').forEach(p=>p.classList.remove('active'));!a&&e.classList.add('active')}
+        function updateProgress(){const t=document.querySelectorAll('input[type="checkbox"]').length,c=document.querySelectorAll('input[type="checkbox"]:checked').length,p=Math.round(c/t*100);document.getElementById('progressFill').style.width=p+'%';document.getElementById('progressText').textContent=p===100?'🎉 100% Complete - Time to Ship! 🚀':p+'% Complete - Keep Going!';localStorage.setItem('frameworkProgress',JSON.stringify({checkboxes:Array.from(document.querySelectorAll('input[type="checkbox"]')).map(cb=>cb.checked)}))}
+        function celebrate(){alert('🎊 CONGRATULATIONS! YOU DID IT! 🎊\n\nYou shipped your app! This is huge. Take a moment to celebrate, then start gathering user feedback for v1.1!')}
+        document.addEventListener('DOMContentLoaded',()=>{document.querySelector('.phase-1').classList.add('active');const s=localStorage.getItem('frameworkProgress');if(s){const d=JSON.parse(s),cb=document.querySelectorAll('input[type="checkbox"]');d.checkboxes.forEach((c,i)=>{if(cb[i])cb[i].checked=c});updateProgress()}})
+    </script>
+</body>
+</html>
